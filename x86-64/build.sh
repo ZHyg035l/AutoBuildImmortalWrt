@@ -36,6 +36,20 @@ PACKAGES="$PACKAGES luci-app-openclash"
 PACKAGES="$PACKAGES luci-i18n-homeproxy-zh-cn"
 PACKAGES="$PACKAGES openssh-sftp-server"
 PACKAGES="$PACKAGES luci-i18n-zerotier-zh-cn"
+PACKAGES="$PACKAGES luci-app-wireguard"
+PACKAGES="$PACKAGES luci-proto-wireguard"
+PACKAGES="$PACKAGES kmod-wireguard"
+PACKAGES="$PACKAGES wireguard-tools"
+PACKAGES="$PACKAGES luci-i18n-vsftpd-zh-cn"
+PACKAGES="$PACKAGES luci-app-ddns-go"
+PACKAGES="$PACKAGES luci-i18n-ddns-go-zh-cn"
+PACKAGES="$PACKAGES luci-i18n-msd_lite-zh-cn"
+PACKAGES="$PACKAGES luci-app-socat"
+PACKAGES="$PACKAGES luci-i18n-socat-zh-cn"
+PACKAGES="$PACKAGES tailscale"
+PACKAGES="$PACKAGES luci-i18n-watchcat-zh-cn"
+PACKAGES="$PACKAGES squashfs-tools-mksquashfs"
+PACKAGES="$PACKAGES squashfs-tools-unsquashfs"
 # 增加几个必备组件 方便用户安装iStore
 PACKAGES="$PACKAGES fdisk"
 PACKAGES="$PACKAGES script-utils"
@@ -54,8 +68,8 @@ echo "$PACKAGES"
 make image PROFILE="generic" PACKAGES="$PACKAGES" FILES="/home/build/immortalwrt/files" ROOTFS_PARTSIZE=$PROFILE
 
 if [ $? -ne 0 ]; then
-    echo "$(date '+%Y-%m-%d %H:%M:%S') - Error: Build failed!"
+    echo "$(date '+%Y-%m-%d %H:%M:%S') - 错误: 构建失败!"
     exit 1
 fi
 
-echo "$(date '+%Y-%m-%d %H:%M:%S') - Build completed successfully."
+echo "$(date '+%Y-%m-%d %H:%M:%S') - 构建成功完成."
